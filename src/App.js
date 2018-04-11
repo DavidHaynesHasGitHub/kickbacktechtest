@@ -1,3 +1,5 @@
+import React, {Component} from 'react'
+
 class App extends React.Component{
     constructor(){
         super();
@@ -5,15 +7,6 @@ class App extends React.Component{
             depositAmount: 0,
             error: false
         }
-        _.bindAll(
-        this,
-        'renderDeposits',
-        'action',
-        'creditCardNumber',
-        'creditCardName',
-        'creditCardExpiry',
-        'creditCardCVC',
-        'depositFunds')
     }
     componentDidMount(){
 
@@ -26,7 +19,7 @@ class App extends React.Component{
         this.setState({depositAmount: amount})
     }
     renderDeposits(){
-        const desposits = ['5', '10', '20', '40', '250', '1000']
+        const deposits = ['5', '10', '20', '40', '250', '1000']
         return deposits.map((amount) => {
             let classNames= "despoit-buttons"
             if(this.state.depositAmount === amount){
@@ -54,6 +47,8 @@ class App extends React.Component{
             this.setState({creditCardCVC:    event.target.value})
         }
     render(){
+
+      return(
         <div className="main">
           <div className="inner">
             <h1 className='header'>Deposit Funds</h1>
@@ -63,7 +58,7 @@ class App extends React.Component{
                   {this.renderDeposits()}
               </div>
               <div className="creditCardNumberContainer">
-                <input className="creditCardNumberInput" type="text" placeholder-"Credit Card Number"
+                <input className="creditCardNumberInput" type="text" placeholder="Credit Card Number"
                 value={this.state.creditCardNumber}
                 onChange={this.newCreditCardNumber}/>
               </div>
@@ -76,6 +71,7 @@ class App extends React.Component{
               </div>
             </div>
           </div>
+        );
   }
 }
-React.render(<app />, document.getElementById("root"));
+export default App;
