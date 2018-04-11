@@ -78,4 +78,4 @@ class App extends React.Component{
           </div>
   }
 }
-React.render(<app />, document.getElementById("app"));
+React.render(<app />, document.getElementById("root"));
