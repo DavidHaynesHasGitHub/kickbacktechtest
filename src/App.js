@@ -21,9 +21,9 @@ class App extends React.Component{
     renderDeposits(){
         const deposits = ['5', '10', '20', '40', '250', '1000']
         return deposits.map((amount) => {
-            let classNames= "despoit-buttons"
+            let classNames= "depositButton input"
             if(this.state.depositAmount === amount){
-                classNames = 'deposit-button-selected'
+                classNames = 'depositButtonClicked input'
             }
 
             return(
@@ -58,14 +58,14 @@ class App extends React.Component{
                   {this.renderDeposits()}
               </div>
               <div className="creditCardNumberContainer">
-                <input className="creditCardNumberInput" type="text" placeholder="Credit Card Number"
+                <input className="creditCardNumberInput input" type="text" placeholder="Credit Card Number"
                 value={this.state.creditCardNumber}
                 onChange={this.newCreditCardNumber}/>
               </div>
               <div className="creditCardInformation">
-                <input className="nameOnCard" type="text" placeholder="Cardholders Name" value={this.state.creditCardName} onChange={this.newCreditCardName}/>
-                <input className="expiryOnCard" type="text" placeholder="Card Expiry MM/YY" value={this.state.creditCardExpiry} onChange={this.newCreditCardExpiry}/>
-                <input className="cardCVC" type="text" placeholder="CVC" value={this.state.creditCardCVC} onChange={this.newCreditCardCVC}/>
+                <input className="nameOnCard input" type="text" placeholder="Cardholders Name" value={this.state.creditCardName} onChange={this.newCreditCardName}/>
+                <input className="expiryOnCard input" type="text" placeholder="Card Expiry MM/YY" value={this.state.creditCardExpiry} onChange={this.newCreditCardExpiry}/>
+                <input className="cardCVC input" type="text" placeholder="CVC" value={this.state.creditCardCVC} onChange={this.newCreditCardCVC}/>
               </div>
               <button className="depositFunds" onClick={this.click}>Deposit Funds</button>
               </div>

@@ -1,28 +1,142 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  background-color: #3a4351;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#app {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica Neue;
+  height: 100%;
 }
 
-.App-title {
-  font-size: 1.5em;
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 345px;
+  width: 495px;
+  flex-direction: column;
+  background-color: #353d4a;
+  border-top: 5px solid #94CF59;
+  border-radius: 2px;
+  color: #fff;
+  padding: 25px 0;
 }
 
-.App-intro {
-  font-size: large;
+.header {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.subhead {
+  color: #9FA3A9;
+  font-size: 12px;
+}
+
+.box {
+  background-color: #272C36;
+}
+
+.creditCardNumberContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 385px;
+}
+
+.creditCardInformation{
+  margin-right: 5px;
+  flex: 1 1 100%;
+}
+
+.credit-card-exp {
+  margin-right: 5px;
+  flex: 1 1 25%;
+}
+
+.credit-card-cvc {
+  flex: 1 1 15%;
+}
+
+input {
+  font-size: 14px;
+  width: 96%;
+  margin-top: 10px;
+  padding: 10px 8px;
+  border-radius: 3px;
+  border: 1px solid #272C36;
+  color: #fff;
+}
+
+.amount-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.additional-credit-info-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+}
+
+.credit-card-number-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+}
+
+.amount-box {
+  display: flex;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s linear, color 0.3s linear;
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba(148,207,89,0.9);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.amount-box--active {
+  @extend .amount-box;
+  background: rgba(148,207,89,0.9);
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  background-color: #94CF59;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  font-family: Helvetica Neue;
+
+  &:hover {
+    background-color: #85b74e;
+  }
+}
+
+.error-text {
+  color: red;
+  height: 20px;
+  margin-top: 10px;
 }
